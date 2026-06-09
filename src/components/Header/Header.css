@@ -1,0 +1,50 @@
+
+
+.title{
+    font-size:7vw;
+    text-transform: uppercase;
+    font-family : 'Montserrat,sans-serif';
+    color:red
+}
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction:column;
+    height:35vh;
+    width:100%
+}
+.inputs{
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+}
+.search .MuiInputLabel-root {
+  color: brown;
+}
+.languageSelect {
+  width:43%;
+  border:none;
+}
+.search{
+   width:43% 
+}
+
+
+@media (max-width:600px){
+    .header{
+        justify-content: space-evenly;
+        height:25vh;           
+    }
+    .inputs{
+    width:100%;
+    display:flex;
+    gap:30px;
+}
+    .title{
+        font-size: 11vw;
+    }
+    .languageSelect {
+  width: 150px;
+}
+}
