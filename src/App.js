@@ -29,7 +29,10 @@ const [lightMode, setLightMode] = useState(false);
 const [meanings,setMeanings]= useState([])
 const [word,setWord] = useState("")
 const [category,setCategory] = useState("en")
-  const dictionaryAPi = async()=>{
+ 
+ 
+  useEffect(() => {
+     const dictionaryAPi = async()=>{
     try{
       const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`)
       setMeanings(data.data)
@@ -38,8 +41,6 @@ const [category,setCategory] = useState("en")
       console.log(error)
     }
   }
- 
-  useEffect(() => {
   if (word.trim()) {
     dictionaryAPi();
   }
@@ -52,7 +53,7 @@ const [category,setCategory] = useState("en")
     height: "100vh",
     backgroundColor: lightMode ? "#fff" : "#282c34",
     color: lightMode ? "#000" : "#fff",
-    transition: "all 0.5s linar",
+    transition: "all 0.5s linear",
   }}
 >
      <Container maxWidth="md" >
