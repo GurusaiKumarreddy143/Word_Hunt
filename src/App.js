@@ -30,9 +30,7 @@ const [meanings,setMeanings]= useState([])
 const [word,setWord] = useState("")
 const [category,setCategory] = useState("en")
  
- 
-  useEffect(() => {
-     const dictionaryAPi = async()=>{
+ const dictionaryAPi = async()=>{
     try{
       const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`)
       setMeanings(data.data)
@@ -41,10 +39,12 @@ const [category,setCategory] = useState("en")
       console.log(error)
     }
   }
-  if (word.trim()) {
+ 
+  useEffect(() => {
+     
     dictionaryAPi();
-  }
-}, [word, category]);
+  
+}, [word, category,dictionaryAPi]);
  console.log(meanings)
   return (
     <div
